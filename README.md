@@ -20,7 +20,8 @@ api = Rajaongkir(
 
 # ------------- Province -------------
 api.get_provinces()
-# api.get_provinces(id="1")
+# api.get_provinces(id=1) # params
+
 # results:
 # [
 #   {
@@ -31,18 +32,46 @@ api.get_provinces()
 #    ...
 # ]
 
+api.get_province(id=1)
+# api.get_province(
+#   id=1, 
+#   raise_error=False,
+#   params={},
+# )
+
+# results:
+# {
+#     "id": 1,
+#     ....
+# }
+
 # ------------- CITY -------------
 api.get_cities()
-# api.get_cities(id="1", province="1")
+# api.get_cities(id=1, province_id=1) # params
+
 # results:
 # [
 #   {
 #       "id": 1,
-#       ....
+#       "province_id": 10,
+#       ...
 #   },
 #   { ... },
 #    ...
 # ]
+
+api.get_city(id=1)
+# api.get_city(
+#   id=1, 
+#   raise_error=False,
+#   params={'province_id': 21}
+# )
+
+# results:
+# {
+#     "id": 1,
+#     ....
+# }
 ```
 
 ## Contributors
